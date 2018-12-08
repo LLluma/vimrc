@@ -89,7 +89,6 @@ let g:ycm_key_list_previous_completion = ['<C-p>']
 set spelllang=en_us
 
 filetype plugin indent on     " required!
-syntax enable
 set numberwidth=3
 " Switch to alternate file
 map <C-Tab> :bNext!<cr>
@@ -132,15 +131,13 @@ filetype plugin on    " Enable filetype-specific plugins
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
 
-syntax on		" syntax highlight
-set hlsearch		" search highlighting
-set cursorline        " highlight current line
+syntax on
+set hlsearch
+set cursorline
 
 syntax enable
-"set term=xterm-256color
 set t_Co=256
 let g:rehash256=1
-let g:molokai_original=1
 colorscheme molokai
 
 set showmatch		" Cursor shows matching ) and }
@@ -162,7 +159,7 @@ set smarttab		" insert tabs on the start of a line according to context
 set t_vb=
 set tm=500
 
-set expandtab        "replace <TAB> with spaces
+set expandtab
 set softtabstop=4
 set shiftwidth=4
 set tabstop=4
@@ -170,40 +167,17 @@ set tabstop=4
 " status line {
 set laststatus=2
 
-
-"---------------------------------------------------------------------------
-" USEFUL SHORTCUTS
-"---------------------------------------------------------------------------
 " set leader to ,
 let mapleader=","
 let g:mapleader=","
 
-"replace the current word in all opened buffers
-map <leader>r :call Replace()<CR>
-
-" open the error console
-map <leader>cc :botright cope<CR>
 " move to next error
 map <leader>] :cn<CR>
 " move to the prev error
 map <leader>[ :cp<CR>
 
-" --- move around splits {
-" move to and maximize the below split
-map <C-J> <C-W>j<C-W>_
-" move to and maximize the above split
-map <C-K> <C-W>k<C-W>_
-" move to and maximize the left split
-nmap <c-h> <c-w>h<c-w><bar>
-" move to and maximize the right split
-nmap <c-l> <c-w>l<c-w><bar>
-set wmw=0                     " set the min width of a window to 0 so we can maximize others
-set wmh=0                     " set the min height of a window to 0 so we can maximize others
-" }
-
 " ,/ turn off search highlighting
 nmap <leader>/ :nohl<CR>
-
 
 "---------------------------------------------------------------------------
 " ENCODING SETTINGS
