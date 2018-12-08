@@ -1,0 +1,8 @@
+tmp
+*.netrwhist
+*conflicted copy*
+undo/
+sessions/
+.swp
+.undo
+plugged
