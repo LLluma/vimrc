@@ -7,38 +7,39 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
-Plug 'vim-scripts/L9'
-Plug 'lukaszb/vim-web-indent'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-scripts/todo-txt.vim'
-Plug 'Valloric/YouCompleteMe'
-Plug 'tomasr/molokai'
-Plug 'derekwyatt/vim-scala'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'LLluma/rope-vim'
 Plug 'SirVer/ultisnips'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'plasticboy/vim-markdown'
-Plug 'chase/vim-ansible-yaml'
-Plug 'phenomenes/ansible-snippets'
-Plug 'ekalinin/Dockerfile.vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'airblade/vim-gitgutter'
-Plug 'pearofducks/ansible-vim'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-airline/vim-airline'
-Plug 'lambdalisue/vim-pyenv'
-Plug 'fatih/vim-go'
-Plug 'w0rp/ale'
+Plug 'chase/vim-ansible-yaml'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'derekwyatt/vim-scala'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'fatih/vim-go'
+Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'LLluma/rope-vim'
-Plug 'honza/vim-snippets'
+Plug 'lambdalisue/vim-pyenv'
+Plug 'lukaszb/vim-web-indent'
+Plug 'pearofducks/ansible-vim'
+Plug 'phenomenes/ansible-snippets'
+Plug 'plasticboy/vim-markdown'
 Plug 'ryanoasis/vim-devicons'
-Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'vim-ruby/vim-ruby'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'tomasr/molokai'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-ruby/vim-ruby'
+Plug 'vim-scripts/L9'
+Plug 'vim-scripts/todo-txt.vim'
+Plug 'w0rp/ale'
 
 " Initialize plugin system
 call plug#end()
@@ -75,6 +76,8 @@ nnoremap <leader>a :Ag<CR>
 nnoremap <leader>g :GFiles?<CR>
 
 "ALE
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
 let g:ale_linters = {'python': ['flake8', 'pyflakes'], 'ruby': ['rubocop', 'brakeman']}
 let g:ale_fixers = {'python': ['isort'], '*': ['trim_whitespace', 'remove_trailing_lines']}
@@ -91,9 +94,8 @@ set spelllang=en_us
 filetype plugin indent on     " required!
 set numberwidth=3
 " Switch to alternate file
-map <C-Tab> :bNext!<cr>
-map <S-Tab> :bNext!<cr>
-map <C-S-Tab> :bprevious!<cr>
+nnoremap <C-f> :bNext!<cr>
+nnoremap <C-d> :bprevious!<cr>
 
 set colorcolumn=119
 
