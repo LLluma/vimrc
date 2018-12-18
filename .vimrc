@@ -99,12 +99,15 @@ nnoremap <C-d> :bprevious!<cr>
 
 set colorcolumn=119
 
-set clipboard+=unnamed  " use the clipboards of vim and win
 set go+=a               " Visual selection automatically copied to the clipboard<Paste>
 
 vnoremap < <gv
 vnoremap > >gv
 
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
 
 set backupdir=./.backup,/tmp
 set directory=./.backup,/tmp
