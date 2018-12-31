@@ -51,6 +51,11 @@ let mapleader = ","
 let maplocalleader = ","
 set scrolloff=3
 
+"Change terminal cursor in insert mode
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
+
 "Airline settings
 let g:airline_mode_map = {
     \ '__' : '--',
