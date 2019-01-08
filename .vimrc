@@ -14,6 +14,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'airblade/vim-gitgutter'
 Plug 'chase/vim-ansible-yaml'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'derekwyatt/vim-scala'
 Plug 'ekalinin/Dockerfile.vim'
@@ -50,6 +51,7 @@ set nocompatible               " be iMproved
 let mapleader = ","
 let maplocalleader = ","
 set scrolloff=3
+set fillchars=""
 
 "Change terminal cursor in insert mode
 let &t_SI = "\<Esc>[6 q"
