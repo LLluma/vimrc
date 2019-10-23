@@ -1,0 +1,4 @@
+./configure --without-x --with-features=huge \
+    --enable-python3interp=yes --enable-pythoninterp=no \
+    --enable-terminal --enable-largefile --enable-luainterp=yes \
+    --enable-nls --enable-rubyinterp=yes --enable-multibyte --enable-cscope
