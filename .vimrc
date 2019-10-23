@@ -13,7 +13,7 @@ Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'airblade/vim-gitgutter'
-Plug 'chase/vim-ansible-yaml'
+Plug 'chr4/nginx.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'derekwyatt/vim-scala'
@@ -25,7 +25,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'lambdalisue/vim-pyenv'
 Plug 'lukaszb/vim-web-indent'
 Plug 'pearofducks/ansible-vim'
-Plug 'phenomenes/ansible-snippets'
 Plug 'plasticboy/vim-markdown'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
@@ -39,8 +38,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/L9'
+Plug 'vim-scripts/confluencewiki.vim'
 Plug 'vim-scripts/todo-txt.vim'
 Plug 'w0rp/ale'
+Plug 'python/black'
 
 " Initialize plugin system
 call plug#end()
@@ -87,8 +88,9 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
 let g:ale_linters = {'python': ['flake8', 'pyflakes'], 'ruby': ['rubocop', 'brakeman']}
-let g:ale_fixers = {'python': ['isort'], '*': ['trim_whitespace', 'remove_trailing_lines']}
-let g:ale_python_isort_options = '--multi-line=3 --trailing-comma --wrap-length=80'
+let g:ale_fixers = {'python': ['isort', 'black'], '*': ['trim_whitespace', 'remove_trailing_lines']}
+let g:ale_python_isort_options = '--multi-line=3 --trailing-comma --wrap-length=100'
+let g:ale_python_flake8_options = '--max-line-length=100'
 nnoremap <leader>t :ALEFix<CR>
 
 " YouCompleteMe

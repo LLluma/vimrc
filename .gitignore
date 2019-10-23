@@ -6,3 +6,6 @@ sessions/
 .undo/*
 !.undo/.placeholder
 plugged
+autoload/plug.vim.old
+black/
+spell
