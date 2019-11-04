@@ -20,20 +20,24 @@ Plug 'derekwyatt/vim-scala'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'fatih/vim-go'
 Plug 'honza/vim-snippets'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'lambdalisue/vim-pyenv'
 Plug 'lukaszb/vim-web-indent'
 Plug 'pearofducks/ansible-vim'
 Plug 'plasticboy/vim-markdown'
+Plug 'python/black'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+Plug 'takac/vim-hardtime'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
@@ -41,7 +45,9 @@ Plug 'vim-scripts/L9'
 Plug 'vim-scripts/confluencewiki.vim'
 Plug 'vim-scripts/todo-txt.vim'
 Plug 'w0rp/ale'
-Plug 'python/black'
+
+" Hard time always
+let g:hardtime_default_on = 1
 
 " Initialize plugin system
 call plug#end()
@@ -97,14 +103,18 @@ nnoremap <leader>t :ALEFix<CR>
 let g:ycm_key_list_select_completion = ['<C-n>']
 let g:ycm_key_list_previous_completion = ['<C-p>']
 
+" turn hybrid line numbers on
+set number relativenumber
+set nu rnu
+
 "Spell
 set spelllang=en_us
 
 filetype plugin indent on     " required!
 set numberwidth=3
 " Switch to alternate file
-nnoremap <C-f> :bNext!<cr>
-nnoremap <C-d> :bprevious!<cr>
+nnoremap <Tab> :bNext!<cr>
+nnoremap <S-Tab> :bprevious!<cr>
 
 set colorcolumn=119
 
