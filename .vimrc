@@ -7,10 +7,10 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'maksimr/vim-jsbeautify'
+Plug 'LLluma/Vim-Jinja2-Syntax'
 Plug 'LLluma/rope-vim'
 Plug 'SirVer/ultisnips'
-Plug 'Valloric/YouCompleteMe'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'airblade/vim-gitgutter'
 Plug 'chr4/nginx.vim'
@@ -32,7 +32,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'takac/vim-hardtime'
-Plug 'tomasr/molokai'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
@@ -47,7 +46,7 @@ Plug 'vim-scripts/todo-txt.vim'
 Plug 'w0rp/ale'
 
 " Hard time always
-let g:hardtime_default_on = 1
+let g:hardtime_default_on = 0
 
 " Initialize plugin system
 call plug#end()
@@ -98,10 +97,6 @@ let g:ale_fixers = {'python': ['isort', 'black'], '*': ['trim_whitespace', 'remo
 let g:ale_python_isort_options = '--multi-line=3 --trailing-comma --wrap-length=100'
 let g:ale_python_flake8_options = '--max-line-length=100'
 nnoremap <leader>t :ALEFix<CR>
-
-" YouCompleteMe
-let g:ycm_key_list_select_completion = ['<C-n>']
-let g:ycm_key_list_previous_completion = ['<C-p>']
 
 " turn hybrid line numbers on
 set number relativenumber
