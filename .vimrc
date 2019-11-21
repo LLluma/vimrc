@@ -23,6 +23,8 @@ Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-peekaboo'
+Plug 'justinmk/vim-sneak'
 Plug 'lambdalisue/vim-pyenv'
 Plug 'lukaszb/vim-web-indent'
 Plug 'pearofducks/ansible-vim'
@@ -54,10 +56,12 @@ call plug#end()
 filetype plugin indent on
 
 set nocompatible               " be iMproved
+
 let mapleader = ","
 let maplocalleader = ","
 set scrolloff=3
 set fillchars=""
+
 
 "Change terminal cursor in insert mode
 let &t_SI = "\<Esc>[6 q"
@@ -197,6 +201,13 @@ map <leader>[ :cp<CR>
 
 " ,/ turn off search highlighting
 nmap <leader>/ :nohl<CR>
+set hidden
+set mouse=a
+set incsearch
+set ignorecase
+set smartcase
+set linebreak
+
 
 "---------------------------------------------------------------------------
 " ENCODING SETTINGS
@@ -208,14 +219,13 @@ set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
 
 "Ignore list for netrw
 let g:netrw_list_hide= '.*\.pyc$\|.*\.un\~$'
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
 
 set statusline+=%#warningmsg#
 set statusline+=%*
 
 set tags="./.tags,~/.vimtags,./.git/tags"
-
-"=======NerdTree==========
-map <C-n> :NERDTreeToggle<CR>
 
 set textwidth=119
 set colorcolumn=+1
