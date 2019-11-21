@@ -7,16 +7,17 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'maksimr/vim-jsbeautify'
 Plug 'LLluma/Vim-Jinja2-Syntax'
 Plug 'LLluma/rope-vim'
 Plug 'SirVer/ultisnips'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'airblade/vim-gitgutter'
+Plug 'blindFS/vim-taskwarrior'
 Plug 'chr4/nginx.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'derekwyatt/vim-scala'
+Plug 'dhruvasagar/vim-zoom'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'fatih/vim-go'
 Plug 'honza/vim-snippets'
@@ -29,11 +30,13 @@ Plug 'lambdalisue/vim-pyenv'
 Plug 'lukaszb/vim-web-indent'
 Plug 'pearofducks/ansible-vim'
 Plug 'plasticboy/vim-markdown'
+Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'python/black'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'takac/vim-hardtime'
+Plug 'tbabej/taskwiki'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
@@ -45,6 +48,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/L9'
 Plug 'vim-scripts/confluencewiki.vim'
 Plug 'vim-scripts/todo-txt.vim'
+Plug 'vimwiki/vimwiki', { 'branch': 'dev'}
 Plug 'w0rp/ale'
 
 " Hard time always
@@ -100,7 +104,7 @@ let g:ale_linters = {'python': ['flake8', 'pyflakes'], 'ruby': ['rubocop', 'brak
 let g:ale_fixers = {'python': ['isort', 'black'], '*': ['trim_whitespace', 'remove_trailing_lines']}
 let g:ale_python_isort_options = '--multi-line=3 --trailing-comma --wrap-length=100'
 let g:ale_python_flake8_options = '--max-line-length=100'
-nnoremap <leader>t :ALEFix<CR>
+nnoremap <leader>e :ALEFix<CR>
 
 " turn hybrid line numbers on
 set number relativenumber
