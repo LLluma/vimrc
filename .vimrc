@@ -50,6 +50,7 @@ Plug 'vim-scripts/confluencewiki.vim'
 Plug 'vim-scripts/todo-txt.vim'
 Plug 'vimwiki/vimwiki', { 'branch': 'dev'}
 Plug 'w0rp/ale'
+Plug 'ycm-core/YouCompleteMe'
 
 " Hard time always
 let g:hardtime_default_on = 0

@@ -9,3 +9,4 @@ plugged
 autoload/plug.vim.old
 black/
 spell
+view/
