@@ -23,11 +23,13 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'fatih/vim-go'
 Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'justinmk/vim-sneak'
 Plug 'lambdalisue/vim-pyenv'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'lukaszb/vim-web-indent'
 Plug 'pearofducks/ansible-vim'
 Plug 'plasticboy/vim-markdown'
@@ -43,18 +45,19 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/L9'
 Plug 'vim-scripts/confluencewiki.vim'
 Plug 'vim-scripts/todo-txt.vim'
 Plug 'vimwiki/vimwiki', { 'branch': 'dev'}
 Plug 'w0rp/ale'
-Plug 'ycm-core/YouCompleteMe'
 
 " Hard time always
-let g:hardtime_default_on = 0
+let g:hardtime_default_on = 1
+
+" Gutentag
+let g:gutentags_ctags_tagfile = '.git/tags'
+
 
 " Initialize plugin system
 call plug#end()
@@ -74,23 +77,21 @@ let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
-"Airline settings
-let g:airline_mode_map = {
-    \ '__' : '--',
-    \ 'n'  : 'N',
-    \ 'i'  : 'I',
-    \ 'R'  : 'R',
-    \ 'c'  : 'C',
-    \ 'v'  : 'V',
-    \ 'V'  : 'V-L',
-    \ '' : 'V-B',
-    \ 's'  : 'S',
-    \ 'S'  : 'S-L',
-    \ '' : 'S-B',
-    \ 't'  : 'T',
-    \ }
-let g:airline_powerline_fonts = 1
-let g:airline_theme='molokai'
+"Lightline settings
+let g:lightline = { 'colorscheme': 'one' }
+let g:lightline.mode_map = {
+            \ 'n' : 'N',
+            \ 'i' : 'I',
+            \ 'R' : 'R',
+            \ 'v' : 'V',
+            \ 'V' : 'V-L',
+            \ "\<C-v>": 'V-B',
+            \ 'c' : 'C',
+            \ 's' : 'S',
+            \ 'S' : 'S-L',
+            \ "\<C-s>": 'S-B',
+            \ 't': 'T',
+            \ }
 
 "FZF
 nnoremap <leader>f :Files<CR>
