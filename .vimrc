@@ -159,6 +159,8 @@ filetype plugin on    " Enable filetype-specific plugins
 " auto reload vimrc when editing it
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
+au! BufWritePost config.h !sudo make install
+
 
 syntax on
 set hlsearch
